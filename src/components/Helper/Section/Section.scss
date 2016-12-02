@@ -1,0 +1,42 @@
+@import '../../../theme/variables.scss';
+
+// Section Component
+$base2ind-section-padding-y: 4rem !default;
+$base2ind-section-heading-margin-bottom: 2rem !default;
+$base2ind-section-border-bottom: 1px solid $gray-lightest !default;
+$base2ind-subhero-bg-color: $gray-uberlight !default;
+$base2ind-page-paragraph-margin: 2rem !default;
+.base2ind-section {
+  padding: $base2ind-section-padding-y/3 0 0 0;
+
+  .container{
+    padding-left:1em;
+    padding-right:1em;
+    display: inherit;
+    h2 {
+      //margin-bottom: $base2ind-section-heading-margin-bottom;
+      //padding-bottom: $base2ind-section-heading-margin-bottom;
+      //border-bottom: $base2ind-section-border-bottom;
+      font-weight: 300;
+      font-size: 1.3em;
+    }
+  }
+}
+
+.base2ind-section.subhero {
+  background-color: $base2ind-subhero-bg-color;
+  padding: $base2ind-page-paragraph-margin/2 0;
+  margin-top: -$base2ind-section-padding-y/2;
+}
+
+.base2ind-section.nopad-bottom {
+  padding-bottom: 0;
+}
+
+.base2ind-section.nopad-top {
+  padding-top: 0;
+}
+
+.base2ind-section.gray {
+  background-color: $gray-uberlight;
+}

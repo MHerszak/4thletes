@@ -1,0 +1,9 @@
+@import "./../../theme/mixin";
+
+.form-inline{
+  @include flex-center;
+
+  .space{
+    margin: 2px 8px;
+  }
+}

@@ -1,0 +1,84 @@
+import React from 'react';
+import app from 'app';
+import config from 'config';
+import Helmet from 'react-helmet';
+import { connect } from 'react-redux';
+import { Hero, NewsletterSignUp } from './../../components';
+import { email } from './../../utils/validation';
+
+const heroRightStyle = {
+  maxHeight: 800
+};
+
+@connect(
+  state => ({
+    online: state.online
+  })
+)
+export default class Home extends React.Component {
+
+  static propTypes = {
+    online: React.PropTypes.bool
+  };
+
+  state = {
+    ...heroRightStyle
+  };
+
+  componentWillMount() {
+    const hero = Object.assign({}, heroRightStyle, {
+      backgroundBlendMode: 'difference luminosity',
+      backgroundImage: 'url("https://s3-us-west-2.amazonaws.com/sponsors4athletes/images/i-collage.jpg")',
+      backgroundSize: '100%',
+      backgroundPosition: '0% 0%',
+    });
+
+    this.setState({
+      heroRightStyle: hero
+    });
+  }
+
+  handleSubmit(data) {
+    if (email(data.from)) {
+      return false;
+    }
+
+    const emailService = app.service('emails');
+
+    // Use the service
+    const emailData = {
+      from: data.from,
+      to: 'michel.herszak@gmail.com',
+      subject: `${data.fullName} from ${data.companyName} is asking regarding a Proof of Concept`,
+      html: data.message
+    };
+
+    emailService.create(emailData)
+      .then(() => console.log('has been send'))
+      .catch(error => console.log('error', error.message));
+  }
+
+  render() {
+    const styles = require('./Home.scss');
+
+    return (
+      <div className={styles.home}>
+        <Helmet title="Home" />
+        <section id="home">
+          <div className={styles.masthead} style={this.state.heroRightStyle}>
+            <Hero className={styles.jumbotron}>
+              <div className={`${styles.text} ${styles.panel}`}>
+                <h3 className={styles.H4}>Coming soon!</h3>
+                <h1>{config.app.title}</h1>
+                <p>Is here to help you find the right support!</p>
+                <div className={styles.newsletterSignUp}>
+                  <NewsletterSignUp />
+                </div>
+              </div>
+            </Hero>
+          </div>
+        </section>
+      </div>
+    );
+  }
+}

@@ -1,0 +1,9 @@
+@import "./../../theme/variables";
+
+.title{
+  span{
+    color: $humility;
+  }
+  font-weight: 600;
+  text-transform: uppercase;
+}

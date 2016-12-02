@@ -1,0 +1,92 @@
+@import './../../theme/mixin.scss';
+@import '../../theme/variables.scss';
+
+.home {
+  dd {
+    margin-bottom: 15px;
+  }
+}
+
+.masthead {
+
+  background: #2d2d2d;
+  padding: 140px 0;
+  color: white;
+  text-align: center;
+  .jumbotron{
+    @include margin-middle;
+    background-color: transparent;
+    width: 700px;
+
+    padding: 0 0 30px 0;
+
+    .text{
+      h1,h2{
+        color: $humility;
+        font-weight: 700;
+
+      }
+    }
+
+    .panel {
+      padding: 30px 0;
+      border-radius: 4px;
+      color: #333;
+      text-shadow: none;
+      background-color: rgba(200,200,200,0.9);
+    }
+
+    .newsletterSignUp{
+      padding: 80px 0;
+      select.form-control{
+        width: 200px;
+      }
+    }
+  }
+  .logo {
+    $size: 200px;
+    margin: auto;
+    height: $size;
+    width: $size;
+    border-radius: $size / 2;
+    border: 1px solid $cyan;
+    box-shadow: inset 0 0 10px $cyan;
+    vertical-align: middle;
+    p {
+      line-height: $size;
+      margin: 0px;
+    }
+    img {
+      width: 75%;
+      margin: auto;
+    }
+  }
+  h1 {
+    //color: $tomato;
+  }
+  h2 {
+    color: #ddd;
+    font-size: 2em;
+    margin: 20px;
+  }
+  a {
+    color: #ddd;
+  }
+  p {
+    margin: 10px;
+  }
+  .humility {
+    color: $humility;
+    a {
+      color: $humility;
+    }
+  }
+  .github {
+    font-size: 1.5em;
+  }
+}
+
+.counterContainer {
+  text-align: center;
+  margin: 20px;
+}

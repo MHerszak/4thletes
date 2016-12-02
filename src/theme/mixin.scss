@@ -1,0 +1,59 @@
+@mixin vendor-prefix($name, $value) {
+  @each $vendor in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
+    #{$vendor}#{$name}: #{$value};
+  }
+}
+
+@mixin activeHover{
+  &:hover{
+    background: $active-color;
+    color: $white;
+    border-color: $active-color;
+    text-decoration: none;
+  }
+}
+
+@mixin flex{
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;
+}
+
+@mixin inline{
+  display: inline;
+}
+
+@mixin inline-block{
+  display: -moz-inline-stack;
+  display: inline-block;
+  *display: inline;
+}
+
+@mixin inline-flex{
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+@mixin flex-center{
+  @include flex;
+  align-items: center;
+}
+
+@mixin border-radius{
+  border-radius: .25rem;
+}
+@mixin border{
+  border: $border;
+}
+
+@mixin margin-right{
+  margin: 0 0 0 auto;
+}
+
+@mixin margin-middle{
+  margin-left: auto;
+  margin-right: auto;
+}

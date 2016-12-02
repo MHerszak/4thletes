@@ -1,0 +1,55 @@
+/**
+ *  Define scss variables here.
+ *
+ *  Available options for Bootstrap:
+ *  http://getbootstrap.com/customize/
+ *
+ */
+
+// Custom Colors
+$tomato: #f56363;
+$humility: #777;
+$cyan: #33e0ff;
+
+$gray-dark: #212121 !default;
+$gray: lighten($gray-dark, 10%) !default;
+$gray-light: lighten($gray-dark, 30%) !default;
+$gray-lighter: lighten($gray-dark, 55%) !default;
+$gray-lightest: lighten($gray-dark, 80%) !default;
+$gray-uberlight: lighten($gray-dark, 85%) !default;
+
+// Bootstrap Variables
+$brand-primary: darken(#428bca, 6.5%);
+$brand-secondary: #e25139;
+$brand-success: #5cb85c;
+$brand-warning: #f0ad4e;
+$brand-danger: #d9534f;
+$brand-info: #5bc0de;
+
+$text-color: #333;
+
+$font-size-base: 14px;
+$font-family-sans-serif: "Roboto Helvetica", Roboto Helvetica, sans-serif;
+
+/**colors**/
+.red {
+  color: $brand-secondary;
+}
+
+.green {
+  color: $brand-success;
+}
+
+.blue {
+  color: $brand-primary;
+}
+
+.yellow {
+  color: $brand-warning;
+}
+
+.gold {
+  color: #e8c537;
+}
+
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/variables";
