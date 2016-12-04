@@ -1,5 +1,4 @@
 import React from 'react';
-import app from 'app';
 import config from 'config';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
@@ -38,11 +37,14 @@ export default class Home extends React.Component {
     });
   }
 
-  handleSubmit(data) {
+  handleSubmit = (data) => {
+    console.log(data);
     if (email(data.from)) {
       return false;
     }
 
+    /*
+     import app from 'app';
     const emailService = app.service('emails');
 
     // Use the service
@@ -53,9 +55,11 @@ export default class Home extends React.Component {
       html: data.message
     };
 
+
     emailService.create(emailData)
       .then(() => console.log('has been send'))
       .catch(error => console.log('error', error.message));
+      */
   }
 
   render() {
@@ -72,7 +76,7 @@ export default class Home extends React.Component {
                 <h1>{config.app.title}</h1>
                 <p>Is here to help you find the right support!</p>
                 <div className={styles.newsletterSignUp}>
-                  <NewsletterSignUp />
+                  <NewsletterSignUp onSubmit={this.handleSubmit} />
                 </div>
               </div>
             </Hero>

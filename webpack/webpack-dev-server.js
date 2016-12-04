@@ -19,6 +19,8 @@ var serverOptions = {
   stats: { colors: true }
 };
 
+console.log("contentBase: ß",serverOptions.contentBase);
+
 var app = new Express();
 
 app.use(require('webpack-dev-middleware')(compiler, serverOptions));

@@ -2,8 +2,7 @@ import React from 'react';
 import { reduxForm, Field, propTypes } from 'redux-form';
 import Button from './../Helper/Button';
 import newsletterSignUpValidation from './newsletterSignUpValidation';
-const colors = ['Brand', 'Athlete'];
-
+const option = ['Brand', 'Athlete'];
 
 @reduxForm({
   form: 'NewsletterSignUp',
@@ -15,11 +14,11 @@ export default class NewsletterSignUp extends React.Component {
     ...propTypes
   }
 
-  renderColorSelector = ({ input, meta: { touched, error } }) => (
+  renderOptionsSelector = ({ input, meta: { touched, error } }) => (
     <div className={`input-group input-group-lg ${error && touched ? 'has-error' : ''}`}>
       <select {...input} className="form-control">
         <option value="">I AM A...</option>
-        {colors.map(val => <option value={val} key={val}>{val}</option>)}
+        {option.map(val => <option value={val} key={val}>{val}</option>)}
       </select>
       {/*
       {touched && error && <span>{error}</span>}
@@ -52,7 +51,7 @@ export default class NewsletterSignUp extends React.Component {
         onSubmit={handleSubmit}
       >
         <div>
-          <Field name="type" placeholder="Full name.." component={this.renderColorSelector} />
+          <Field name="type" component={this.renderOptionsSelector} />
           <Field name="email" placeholder="Email.." type="email" component={this.renderField} />
         </div>
 

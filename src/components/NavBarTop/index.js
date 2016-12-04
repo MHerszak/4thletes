@@ -53,20 +53,18 @@ export default class NavBarTop extends React.Component {
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
-        <Nav pullRight>
-          <NavItem
-            eventKey={1}
-            href="https://twitter.com/Sponsors4athle1"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <Icon name="twitter" />
-          </NavItem>
-        </Nav>
-
 
         <Navbar.Collapse>
           <Nav navbar activeKey={0} pullRight>
+
+            <NavItem
+              eventKey={1}
+              href="https://twitter.com/Sponsors4athle1"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Icon name="twitter" />
+            </NavItem>
 
             {/*
             <LinkContainer to="/about">
