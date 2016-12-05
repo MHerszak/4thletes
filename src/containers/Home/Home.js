@@ -52,6 +52,7 @@ export default class Home extends React.Component {
     campaignsService.create(campaignsData)
       .then(() => console.log('has been send'))
       .catch(error => console.log('error', error.message));
+
   }
 
   render() {
