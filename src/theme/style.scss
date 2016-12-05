@@ -503,7 +503,7 @@ h1, h2, h3, h4, h5, h6 {
 //
 .footer {
   background-color: #323a45;
-  padding-top: 60px;
+  padding: 60px 0;
 }
 .footer h2 {
   color: #fff;
@@ -548,6 +548,7 @@ h1, h2, h3, h4, h5, h6 {
 .footer .footer-bottom {
   //padding-top: 40px;
   padding-bottom: 40px;
+  margin: 20px;
   //border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 .footer .footer-bottom .list-inline li a {

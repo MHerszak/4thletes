@@ -18,10 +18,3 @@ const campaignSchema = new Schema({
 const campaignModel = mongoose.model('campaign', campaignSchema);
 
 module.exports = campaignModel;
-
-// Tell mongoose to use native promises
-// See http://mongoosejs.com/docs/promises.html
-mongoose.Promise = global.Promise;
-
-// Connect to your MongoDB instance(s)
-mongoose.connect('mongodb://base2ind:##21gesineMH##@ds119608.mlab.com:19608/4thletes');

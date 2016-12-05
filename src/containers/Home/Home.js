@@ -66,7 +66,8 @@ export default class Home extends React.Component {
               <div className={`${styles.text} ${styles.panel}`}>
                 <h3 className={styles.H4}>Coming soon!</h3>
                 <h1>{config.app.title}</h1>
-                <p>Is here to help you find the right support!</p>
+                <p>Is here to help you find the right support for athletes!</p>
+                <p>Sign up here so we can keep you in the loop!</p>
                 <div className={styles.newsletterSignUp}>
                   <NewsletterSignUp onSubmit={this.handleSubmit} />
                 </div>

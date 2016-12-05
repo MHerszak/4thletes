@@ -38,5 +38,6 @@ module.exports = {
       profileFields: ['id', 'displayName', 'photos', 'email', 'first_name', 'last_name', 'age_range'],
       accessTokenField: 'accessToken'
     }
-  }
+  },
+  mongoDB: 'mongodb://base2ind:##21gesineMH##@ds119608.mlab.com:19608/4thletes',
 };

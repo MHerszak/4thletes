@@ -8,6 +8,7 @@ import rest from 'feathers-rest';
 import socketio from 'feathers-socketio';
 import isPromise from 'is-promise';
 import PrettyError from 'pretty-error';
+import mongoose from 'mongoose';
 import publicConfig from '../src/config';
 import config from './config';
 import middleware from './middleware';
@@ -114,5 +115,36 @@ app.io.on('connection', socket => {
     messageBuffer[messageIndex % bufferSize] = message;
     messageIndex++;
     app.io.emit('msg', message);
+  });
+});
+
+// Tell mongoose to use native promises
+// See http://mongoosejs.com/docs/promises.html
+mongoose.Promise = global.Promise;
+
+// Connect to your MongoDB instance(s)
+mongoose.connect(config.mongoDB);
+
+// CONNECTION EVENTS
+// When successfully connected
+mongoose.connection.on('connected', function () {
+  console.log('Mongoose default connection open');
+});
+
+// If the connection throws an error
+mongoose.connection.on('error',function (err) {
+  console.log('Mongoose default connection error: ' + err);
+});
+
+// When the connection is disconnected
+mongoose.connection.on('disconnected', function () {
+  console.log('Mongoose default connection disconnected');
+});
+
+// If the Node process ends, close the Mongoose connection
+process.on('SIGINT', function() {
+  mongoose.connection.close(function () {
+    console.log('Mongoose default connection disconnected through app termination');
+    process.exit(0);
   });
 });

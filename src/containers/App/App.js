@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Alert from 'react-bootstrap/lib/Alert';
 import { isLoaded as isInfoLoaded, load as loadInfo } from 'redux/modules/info';
 import { isLoaded as isAuthLoaded, load as loadAuth, logout } from 'redux/modules/auth';
-import { Notifs, InfoBar } from 'components';
+import { Notifs } from 'components';
 import { push } from 'react-router-redux';
 import config from 'config';
 import { asyncConnect } from 'redux-connect';
@@ -58,7 +58,6 @@ export default class App extends React.Component {
 
           {children}
         </div>
-        <InfoBar />
 
         <Footer brandName={config.app.developer} />
       </div>

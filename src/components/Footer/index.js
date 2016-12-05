@@ -1,5 +1,4 @@
 import React from 'react';
-import { IndexLink } from 'react-router';
 
 export default class Footer extends React.Component {
 
@@ -30,9 +29,9 @@ export default class Footer extends React.Component {
                 </ul>
                 */}
                 <span>{'© Copyright 2016. Designed by '}
-                  <IndexLink to="/">
+                  <a href="http://www.base2industries.com">
                     {brandName}
-                  </IndexLink>
+                  </a>
                 </span>
               </div>
             </div>
