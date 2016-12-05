@@ -22,6 +22,7 @@ const targetUrl = `http://${config.apiHost}:${config.apiPort}`;
 const pretty = new PrettyError();
 const app = express();
 const server = new http.Server(app);
+
 const proxy = httpProxy.createProxyServer({
   target: targetUrl,
   ws: true

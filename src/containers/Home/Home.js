@@ -2,6 +2,7 @@ import React from 'react';
 import config from 'config';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
+import app from 'app';
 import { Hero, NewsletterSignUp } from './../../components';
 import { email } from './../../utils/validation';
 
@@ -39,27 +40,18 @@ export default class Home extends React.Component {
 
   handleSubmit = (data) => {
     console.log(data);
-    if (email(data.from)) {
+    if (email(data.email)) {
+      console.log('not an email');
       return false;
     }
 
-    /*
-     import app from 'app';
-    const emailService = app.service('emails');
+    const campaignsService = app.service('campaigns');
 
-    // Use the service
-    const emailData = {
-      from: data.from,
-      to: 'michel.herszak@gmail.com',
-      subject: `${data.fullName} from ${data.companyName} is asking regarding a Proof of Concept`,
-      html: data.message
-    };
+    const campaignsData = data;
 
-
-    emailService.create(emailData)
+    campaignsService.create(campaignsData)
       .then(() => console.log('has been send'))
       .catch(error => console.log('error', error.message));
-      */
   }
 
   render() {
