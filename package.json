@@ -1,14 +1,14 @@
 {
-  "name": "react-redux-universal-hot-example",
+  "name": "sponsors-4-athletes",
   "description": "Example of an isomorphic (universal) webapp using react redux and hot reloading",
-  "author": "Erik Rasmussen <rasmussenerik@gmail.com> (http://github.com/erikras)",
+  "author": "Michel Herszak",
   "license": "MIT",
-  "version": "0.9.0",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/erikras/react-redux-universal-hot-example"
+    "url": "https://github.com/MHerszak/4thletes.git"
   },
-  "homepage": "https://github.com/erikras/react-redux-universal-hot-example",
+  "homepage": "http://www.base2industries.com",
   "keywords": [
     "react",
     "isomorphic",
@@ -106,6 +106,7 @@
     "babel-runtime": "^6.11.6",
     "body-parser": "^1.15.2",
     "compression": "^1.6.2",
+    "concurrently": "^3.1.0",
     "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
     "express-session": "^1.14.1",
