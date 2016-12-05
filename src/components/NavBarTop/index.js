@@ -66,6 +66,15 @@ export default class NavBarTop extends React.Component {
               <Icon name="twitter" />
             </NavItem>
 
+            <NavItem
+              eventKey={2}
+              target="_blank"
+              title="Instagram"
+              href="https://www.instagram.com/sponsors4athletes/"
+            >
+              <Icon name="instagram" />
+            </NavItem>
+
             {/*
             <LinkContainer to="/about">
               <NavItem eventKey={4}>About Us</NavItem>
