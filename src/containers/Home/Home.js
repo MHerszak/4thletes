@@ -39,7 +39,6 @@ export default class Home extends React.Component {
   }
 
   handleSubmit = (data) => {
-    console.log(data);
     if (email(data.email)) {
       console.log('not an email');
       return false;
