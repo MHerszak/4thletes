@@ -19,8 +19,8 @@ export default class Icon extends React.Component {
     let { iconClass } = this.props;
     const { name } = this.props;
     const iconCode = icons[name] ? icons[name] : name;
-    iconClass = (typeof iconClass === 'string') ? ' ' + iconClass : '';
-    const c = 'icon fa fa-fw fa-' + iconCode + ' icon-' + name + '' + iconClass;
+    iconClass = (typeof iconClass === 'string') ? ` ${iconClass}` : '';
+    const c = `icon fa fa-fw fa-${iconCode} icon-${name} ${iconClass}`;
     return <i className={c} aria-hidden="true"></i>;
   }
 }

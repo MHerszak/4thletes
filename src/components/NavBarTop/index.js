@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
-// import { LinkContainer } from 'react-router-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 import { IndexLink } from 'react-router';
 import { logout } from 'redux/modules/auth';
 import { push } from 'react-router-redux';
@@ -58,6 +58,24 @@ export default class NavBarTop extends React.Component {
         <Navbar.Collapse>
           <Nav navbar activeKey={0} pullRight>
 
+            {/*
+            <LinkContainer to="/about">
+              <NavItem eventKey={4}>About Us</NavItem>
+            </LinkContainer>
+
+
+            {!user && <LinkContainer to="/login">
+              <NavItem eventKey={5}>Login</NavItem>
+            </LinkContainer>}
+            {!user && <LinkContainer to="/register">
+              <NavItem eventKey={6}>Register</NavItem>
+            </LinkContainer>}
+            {user && <LinkContainer to="/logout">
+              <NavItem eventKey={7} className="logout-link" onClick={this.handleLogout}>
+                Logout
+              </NavItem>
+            </LinkContainer>}
+            */}
             <NavItem
               eventKey={1}
               href="https://twitter.com/Sponsors4athle1"
@@ -76,24 +94,6 @@ export default class NavBarTop extends React.Component {
               <Icon name="instagram" />
             </NavItem>
 
-            {/*
-            <LinkContainer to="/about">
-              <NavItem eventKey={4}>About Us</NavItem>
-            </LinkContainer>
-
-
-            {!user && <LinkContainer to="/login">
-              <NavItem eventKey={5}>Login</NavItem>
-            </LinkContainer>}
-            {!user && <LinkContainer to="/register">
-              <NavItem eventKey={6}>Register</NavItem>
-            </LinkContainer>}
-            {user && <LinkContainer to="/logout">
-              <NavItem eventKey={7} className="logout-link" onClick={this.handleLogout}>
-                Logout
-              </NavItem>
-            </LinkContainer>}
-             */}
           </Nav>
           {user && <p className="navbar-text">
             Logged in as <strong>{user.email}</strong>.

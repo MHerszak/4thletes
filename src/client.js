@@ -13,10 +13,18 @@ import { useScroll } from 'react-router-scroll';
 import { getStoredState } from 'redux-persist';
 import localForage from 'localforage';
 import { socket } from 'app';
+import ReactGA from 'react-ga';
 import createStore from './redux/create';
 import ApiClient from './helpers/ApiClient';
 import getRoutes from './routes';
 import checkNet from './utils/checkNet';
+
+ReactGA.initialize('UA-88535938-1');
+
+function logPageView() {
+  ReactGA.set({ page: window.location.pathname });
+  ReactGA.pageview(window.location.pathname);
+}
 
 const offlinePersistConfig = {
   storage: localForage,
@@ -59,7 +67,7 @@ Promise.all([window.__data ? true : checkNet(), getStoredState(offlinePersistCon
       ReactDOM.render(
         <HotEnabler>
           <Provider store={store} key="provider">
-            <Router history={history} render={renderRouter}>
+            <Router history={history} onUpdate={logPageView} render={renderRouter}>
               {routes}
             </Router>
           </Provider>
