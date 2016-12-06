@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 import { IndexLink } from 'react-router';
 import { logout } from 'redux/modules/auth';
 import { push } from 'react-router-redux';
@@ -79,9 +80,8 @@ export default class NavBarTop extends React.Component {
             <LinkContainer to="/about">
               <NavItem eventKey={4}>About Us</NavItem>
             </LinkContainer>
-            */}
 
-            {/*
+
             {!user && <LinkContainer to="/login">
               <NavItem eventKey={5}>Login</NavItem>
             </LinkContainer>}
@@ -93,7 +93,7 @@ export default class NavBarTop extends React.Component {
                 Logout
               </NavItem>
             </LinkContainer>}
-            */}
+             */}
           </Nav>
           {user && <p className="navbar-text">
             Logged in as <strong>{user.email}</strong>.

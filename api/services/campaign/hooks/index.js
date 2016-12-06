@@ -18,7 +18,9 @@ exports.after = {
   all: [],
   find: [],
   get: [],
-  create: [],
+  create: [
+    globalHooks.sendEmailToAdmin(),
+  ],
   update: [],
   patch: [],
   remove: []
