@@ -1,6 +1,7 @@
 import feathersNedb from 'feathers-nedb';
 import NeDB from 'nedb';
 import hooks from './hooks';
+const users = require('./users-model');
 
 export default function userService() {
   const app = this;

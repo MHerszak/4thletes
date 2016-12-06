@@ -64,7 +64,8 @@
         "NODE_ENV": "development",
         "PORT": 3000,
         "APIPORT": 3030,
-        "WEBPACK_DLLS": 1
+        "WEBPACK_DLLS": 1,
+        "MONGO_URL": "mongodb://base2ind:##21gesineMH##@ds119608.mlab.com:19608/4thletes"
       }
     },
     "start-dev-api": {
@@ -72,7 +73,8 @@
       "env": {
         "NODE_PATH": "./api",
         "NODE_ENV": "development",
-        "APIPORT": 3030
+        "APIPORT": 3030,
+        "MONGO_URL": "mongodb://base2ind:##21gesineMH##@ds119608.mlab.com:19608/4thletes"
       }
     },
     "watch-client": {
