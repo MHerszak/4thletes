@@ -62,7 +62,7 @@ export default class NavBarTop extends React.Component {
             <LinkContainer to="/about">
               <NavItem eventKey={4}>About Us</NavItem>
             </LinkContainer>
-             */}
+
 
             {!user && <LinkContainer to="/login">
               <NavItem eventKey={5}>Login</NavItem>
@@ -75,7 +75,7 @@ export default class NavBarTop extends React.Component {
                 Logout
               </NavItem>
             </LinkContainer>}
-
+            */}
             <NavItem
               eventKey={1}
               href="https://twitter.com/Sponsors4athle1"
