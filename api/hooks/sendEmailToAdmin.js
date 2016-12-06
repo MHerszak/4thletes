@@ -35,8 +35,6 @@ export default function sendEmailToAdmin(options = {}) { // always wrap in a fun
         html: `${data.email} just signed up on Sponsors4Athletes`,
       };
 
-      console.log('made it till email service');
-
       emailService.create(emailData)
         .then(() => {
         console.log(`send email to ${data.email}`);
