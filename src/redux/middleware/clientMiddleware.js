@@ -1,3 +1,4 @@
+// https://github.com/reactjs/redux/issues/99#issuecomment-112198579
 export default function clientMiddleware(client) {
   return ({ dispatch, getState }) => next => action => {
     if (typeof action === 'function') {

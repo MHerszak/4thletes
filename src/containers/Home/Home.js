@@ -2,7 +2,7 @@ import React from 'react';
 import config from 'config';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
-import app from 'app';
+import * as emailActions from 'redux/modules/email';
 import { Hero, NewsletterSignUp } from './../../components';
 import { email } from './../../utils/validation';
 
@@ -13,12 +13,13 @@ const heroRightStyle = {
 @connect(
   state => ({
     online: state.online
-  })
+  }), emailActions
 )
 export default class Home extends React.Component {
 
   static propTypes = {
-    online: React.PropTypes.bool
+    online: React.PropTypes.bool,
+    sendEmail: React.PropTypes.func
   };
 
   state = {
@@ -44,17 +45,15 @@ export default class Home extends React.Component {
       return false;
     }
 
-    const campaignsService = app.service('campaigns');
-
-    const campaignsData = data;
-
-    campaignsService.create(campaignsData)
-      .then(() => console.log('has been send'))
-      .catch(error => console.log('error', error.message));
+    this.props.sendEmail(data);
   }
 
   render() {
     const styles = require('./Home.scss');
+
+    const { online } = this.props;
+
+    console.log(`You are online: ${online}`);
 
     return (
       <div className={styles.home}>
@@ -68,7 +67,7 @@ export default class Home extends React.Component {
                 <p>Is here to help brands to help athletes!</p>
                 <p>Sign up here so we can keep you in the loop!</p>
                 <div className={styles.newsletterSignUp}>
-                  <NewsletterSignUp onSubmit={this.handleSubmit} />
+                  <NewsletterSignUp onSubmit={this.props.sendEmail} />
                 </div>
               </div>
             </Hero>

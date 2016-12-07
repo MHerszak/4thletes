@@ -122,8 +122,6 @@ app.io.on('connection', socket => {
 // See http://mongoosejs.com/docs/promises.html
 mongoose.Promise = global.Promise;
 
-console.log(`This is the mongo_url: ${process.env.MONGO_URL}`);
-
 // Connect to your MongoDB instance(s)
 mongoose.connect(process.env.MONGO_URL);
 

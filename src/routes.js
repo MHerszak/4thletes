@@ -2,8 +2,8 @@ import React from 'react';
 import { IndexRoute, Route } from 'react-router';
 import { isLoaded as isAuthLoaded, load as loadAuth } from 'redux/modules/auth';
 import {
-  App, Chat, ChatFeathers, Home, Widgets, About,
-  Register, Login, LoginSuccess, Survey, NotFound
+  App, ChatFeathers, Home, About,
+  Register, Login, LoginSuccess, NotFound
 } from 'containers';
 
 export default store => {
@@ -50,9 +50,9 @@ export default store => {
       {/* Routes */}
       <Route path="login" component={Login} />
       <Route path="about" component={About} />
-      <Route path="survey" component={Survey} />
+      {/* <Route path="survey" component={Survey} />
       <Route path="widgets" component={Widgets} />
-      <Route path="chat" component={Chat} />
+      <Route path="chat" component={Chat} /> */}
 
       {/* Catch all route */}
       <Route path="*" component={NotFound} status={404} />
